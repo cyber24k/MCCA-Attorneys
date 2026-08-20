@@ -4,15 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCCA | Mutandiro, Chitsanga & Chitima Attorneys</title>
+    <title>MCCA | Mutandiro, Chitsanga & Chitima Attorneys — Premier Legal Excellence</title>
     <meta name="description"
-        content="MCCA is a premium law firm specializing in Corporate Law, IP, and Civil Litigation with a modern, high-fidelity approach to legal excellence.">
-
+        content="Mutandiro, Chitsanga & Chitima Attorneys (MCCA) is a premier Zimbabwean law firm specializing in Corporate Law, Intellectual Property, Civil Litigation, Labour Consultancy, and Property Law.">
+    <meta name="keywords"
+        content="Mutandiro Chitsanga Chitima Attorneys, MCCA, Zimbabwe law firm, corporate law, civil litigation, intellectual property, Harare lawyers, labour consultants, property law">
+    <meta property="og:title" content="Mutandiro, Chitsanga & Chitima Attorneys | MCCA">
+    <meta property="og:description"
+        content="Premier legal excellence in Corporate Law, IP, Civil Litigation, Labour, and Property Law.">
+    <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
@@ -20,176 +25,630 @@
 
 <body>
 
-    <div id="cursor-orb"></div>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
 
-    <nav class="navbar">
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="#" class="logo">
-                <img src="logo_transparent.png" alt="MCCA Logo">
+            <a href="#home" class="logo" aria-label="MCCA Home">
+                <img src="logo_transparent.png" alt="Mutandiro, Chitsanga & Chitima Attorneys Logo">
             </a>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#people">Our People</a>
-                <a href="#contact" class="cta-btn secondary">Request Consultation</a>
+            <div class="nav-links" id="nav-links">
+                <a href="#home" data-nav>Home</a>
+                <a href="#about" data-nav>About</a>
+                <a href="#services" data-nav>Services</a>
+                <a href="#cases" data-nav>Case Studies</a>
+                <a href="#people" data-nav>Our People</a>
+                <a href="#contact" class="cta-btn primary">Free Consultation</a>
             </div>
-            <button class="mobile-toggle" aria-label="Toggle Menu">
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
                 <span></span>
                 <span></span>
             </button>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home" data-mobile-link>Home</a>
+        <a href="#about" data-mobile-link>About</a>
+        <a href="#services" data-mobile-link>Services</a>
+        <a href="#cases" data-mobile-link>Case Studies</a>
+        <a href="#people" data-mobile-link>Our People</a>
+        <a href="#contact" data-mobile-link>Contact</a>
+    </div>
+
     <main>
-        <!-- Hero Section -->
+        <!-- ===== HERO SECTION ===== -->
         <section id="home" class="hero">
-            <div class="mesh-bg"></div>
+            <canvas id="particle-canvas"></canvas>
+            <div class="hero-gradient"></div>
             <div class="container">
-                <div class="hero-content scroll-reveal">
-                    <h1 class="hero-title">Mutandiro, Chitsanga &<br><span class="accent-text">Chitima Attorneys</span>
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        Harare's Premier Law Firm
+                    </div>
+                    <h1 class="hero-title" id="hero-title">
+                        <span class="hero-title-line">Mutandiro, Chitsanga & Chitima Attorneys</span>
                     </h1>
-                    <p class="hero-subtitle">MCCA redefines legal excellence with a blend of technological innovation
-                        and traditional legal rigor. We protect what matters most.</p>
+                    <p class="hero-subtitle" id="hero-subtitle">
+                        <span class="hero-typing" id="hero-typing"></span>
+                    </p>
                     <div class="hero-actions">
-                        <a href="#contact" class="cta-btn primary magnetic">Request Consultation</a>
-                        <a href="#services" class="text-link">Explore Practice Areas <svg width="20" height="20"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
+                        <a href="#contact" class="cta-btn primary magnetic" id="hero-cta">
+                            Request Consultation
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg></a>
+                            </svg>
+                        </a>
+                        <a href="#services" class="text-link">
+                            Explore Practice Areas
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
-            <!-- Ticker -->
-            <div class="ticker">
-                <div class="ticker-wrapper">
-                    <span>Forbes Legal 500</span>
-                    <span>Best Lawyers 2026</span>
-                    <span>Chambers & Partners</span>
-                    <span>Lawyers Weekly Elite</span>
-                    <span>Global IP Awards</span>
-                    <!-- Repeat for seamless loop -->
-                    <span>Forbes Legal 500</span>
-                    <span>Best Lawyers 2026</span>
-                    <span>Chambers & Partners</span>
-                    <span>Lawyers Weekly Elite</span>
-                    <span>Global IP Awards</span>
+            <div class="hero-scroll-indicator">
+                <div class="scroll-mouse"></div>
+                <span class="scroll-text">Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- ===== TICKER / AWARDS ===== -->
+        <section class="ticker">
+            <div class="ticker-wrapper">
+                <span>Forbes Legal 500</span>
+                <span>Best Lawyers 2026</span>
+                <span>Chambers & Partners</span>
+                <span>Lawyers Weekly Elite</span>
+                <span>Global IP Awards</span>
+                <span>Forbes Legal 500</span>
+                <span>Best Lawyers 2026</span>
+                <span>Chambers & Partners</span>
+                <span>Lawyers Weekly Elite</span>
+                <span>Global IP Awards</span>
+            </div>
+        </section>
+
+        <!-- ===== STATS SECTION ===== -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item reveal">
+                        <div class="stat-number">
+                            <span class="counter" data-target="15">0</span><span class="counter-suffix">+</span>
+                        </div>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
+                    <div class="stat-item reveal stagger-1">
+                        <div class="stat-number">
+                            <span class="counter" data-target="500">0</span><span class="counter-suffix">+</span>
+                        </div>
+                        <div class="stat-label">Cases Won</div>
+                    </div>
+                    <div class="stat-item reveal stagger-2">
+                        <div class="stat-number">
+                            <span class="counter" data-target="3">0</span><span class="counter-suffix"></span>
+                        </div>
+                        <div class="stat-label">Jurisdictions</div>
+                    </div>
+                    <div class="stat-item reveal stagger-3">
+                        <div class="stat-number">
+                            <span class="counter" data-target="12">0</span><span class="counter-suffix">+</span>
+                        </div>
+                        <div class="stat-label">Expert Attorneys</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- ===== ABOUT SECTION ===== -->
         <section id="about" class="about">
             <div class="container">
-                <div class="bento-grid">
-                    <div class="bento-item main-about scroll-reveal">
-                        <span class="tag">Our Heritage</span>
-                        <h2>A legacy of innovation.</h2>
-                        <p>Founded on the principles of integrity and forward-thinking, MCCA has consistently set the
-                            standard for high-stakes legal representation in the digital age.</p>
+                <div class="about-grid">
+                    <div class="about-content reveal-left">
+                        <span class="section-tag">Our Heritage</span>
+                        <h2>A Legacy of <span class="highlight">Innovation</span> & Legal Excellence</h2>
+                        <p class="about-description">Founded on the principles of integrity and forward-thinking,
+                            <strong>Mutandiro, Chitsanga & Chitima Attorneys (MCCA)</strong> has consistently set the
+                            standard for high-stakes legal representation. We combine cutting-edge technology with
+                            traditional legal rigor to deliver unparalleled results.
+                        </p>
+
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <div class="about-feature-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Proven Track Record</h4>
+                                    <p>Over 500 cases successfully resolved with a 98% client satisfaction rate.</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <div class="about-feature-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Multi-Jurisdictional Reach</h4>
+                                    <p>Operating across multiple jurisdictions with deep local expertise and global
+                                        perspective.</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <div class="about-feature-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                        </polygon>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Award-Winning Team</h4>
+                                    <p>Recognized by Forbes Legal 500 and Chambers & Partners for legal excellence.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="cta-btn secondary magnetic">Schedule a Meeting</a>
                     </div>
-                    <div class="bento-item office-parallax scroll-reveal">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
-                            alt="MCCA Headquarters" class="parallax-img">
-                    </div>
-                    <div class="bento-item mission scroll-reveal">
-                        <h3>Our Mission</h3>
-                        <p>To provide unparalleled legal strategic counsel that empowers our clients to navigate complex
-                            global challenges with confidence.</p>
-                    </div>
-                    <div class="bento-item approach scroll-reveal">
-                        <h3>Modern Approach</h3>
-                        <p>We leverage cutting-edge analytics and AI-driven research to gain the edge in every case.</p>
+
+                    <div class="about-image reveal-right">
+                        <div class="about-accent-shape"></div>
+                        <div class="about-image-main">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+                                alt="MCCA Headquarters - Mutandiro, Chitsanga & Chitima Attorneys">
+                        </div>
+                        <div class="about-floating-card glass-frost">
+                            <div class="card-number">98%</div>
+                            <div class="card-text">Client<br>Satisfaction Rate</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- ===== SERVICES / PRACTICE AREAS ===== -->
         <section id="services" class="services">
             <div class="container">
-                <div class="section-header scroll-reveal">
-                    <span class="tag">Expertise</span>
-                    <h2>Practice Areas</h2>
+                <div class="section-header reveal">
+                    <span class="section-tag">Expertise</span>
+                    <h2>Our Practice Areas</h2>
+                    <p>Comprehensive legal solutions tailored to protect your interests and drive your success across
+                        every domain of law.</p>
                 </div>
+
                 <div class="services-grid">
-                    <div class="service-card glass scroll-reveal magnetic">
-                        <div class="service-icon"></div>
+                    <!-- Corporate Law -->
+                    <div class="service-card reveal stagger-1" data-tilt>
+                        <span class="service-number">01</span>
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 21h18"></path>
+                                <path d="M9 8h1"></path>
+                                <path d="M9 12h1"></path>
+                                <path d="M9 16h1"></path>
+                                <path d="M14 8h1"></path>
+                                <path d="M14 12h1"></path>
+                                <path d="M14 16h1"></path>
+                                <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"></path>
+                            </svg>
+                        </div>
                         <h3>Corporate Law</h3>
-                        <div class="service-reveal">
-                            <p>Strategic mergers, acquisitions, and corporate governance for the Fortune 500.</p>
-                            <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
-                        </div>
+                        <p>Strategic mergers, acquisitions, and corporate governance advisory for businesses of all
+                            sizes. We guide organizations through complex regulatory landscapes.</p>
+                        <a href="#contact" class="service-link">
+                            Learn More <span class="arrow">→</span>
+                        </a>
                     </div>
-                    <div class="service-card glass scroll-reveal magnetic">
-                        <div class="service-icon"></div>
+
+                    <!-- Civil Litigation -->
+                    <div class="service-card reveal stagger-2" data-tilt>
+                        <span class="service-number">02</span>
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="m14.31 8 5.74 9.94"></path>
+                                <path d="M9.69 8h11.48"></path>
+                                <path d="m7.38 12 5.74-9.94"></path>
+                                <path d="M9.69 16 3.95 6.06"></path>
+                                <path d="M14.31 16H2.83"></path>
+                                <path d="m16.62 12-5.74 9.94"></path>
+                            </svg>
+                        </div>
                         <h3>Civil Litigation</h3>
-                        <div class="service-reveal">
-                            <p>High-stakes dispute resolution and courtroom advocacy across all jurisdictions.</p>
-                            <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
-                        </div>
+                        <p>High-stakes dispute resolution and courtroom advocacy across all jurisdictions. Our
+                            litigators are relentless in pursuing favorable outcomes.</p>
+                        <a href="#contact" class="service-link">
+                            Learn More <span class="arrow">→</span>
+                        </a>
                     </div>
-                    <div class="service-card glass scroll-reveal magnetic">
-                        <div class="service-icon"></div>
+
+                    <!-- Intellectual Property -->
+                    <div class="service-card reveal stagger-3" data-tilt>
+                        <span class="service-number">03</span>
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2a7 7 0 0 0-7 7c0 4 3 6 4 8h6c1-2 4-4 4-8a7 7 0 0 0-7-7z"></path>
+                                <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
+                                <line x1="10" y1="22" x2="14" y2="22"></line>
+                            </svg>
+                        </div>
                         <h3>Intellectual Property</h3>
-                        <div class="service-reveal">
-                            <p>Protecting innovation through robust patent, trademark, and copyright strategies.</p>
-                            <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+                        <p>Protecting innovation through robust patent, trademark, and copyright strategies. We
+                            safeguard your creative assets in the global marketplace.</p>
+                        <a href="#contact" class="service-link">
+                            Learn More <span class="arrow">→</span>
+                        </a>
+                    </div>
+
+                    <!-- Property Law -->
+                    <div class="service-card reveal stagger-4" data-tilt>
+                        <span class="service-number">04</span>
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24">
+                                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Property Law</h3>
+                        <p>Expert guidance in real estate transactions, conveyancing, land disputes, and property
+                            development. We protect your most valuable assets.</p>
+                        <a href="#contact" class="service-link">
+                            Learn More <span class="arrow">→</span>
+                        </a>
+                    </div>
+
+                    <!-- Labour Consultancy -->
+                    <div class="service-card reveal stagger-5" data-tilt>
+                        <span class="service-number">05</span>
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Labour Consultancy</h3>
+                        <p>Comprehensive employment law advisory, from contract drafting to dispute mediation. We ensure
+                            compliance and protect employer-employee relations.</p>
+                        <a href="#contact" class="service-link">
+                            Learn More <span class="arrow">→</span>
+                        </a>
+                    </div>
+
+                    <!-- Digital Assets & Fintech -->
+                    <div class="service-card reveal stagger-6" data-tilt>
+                        <span class="service-number">06</span>
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <h3>Digital Assets & Fintech</h3>
+                        <p>Navigating the complex regulatory landscape of blockchain, cryptocurrency, and financial
+                            technology. Future-proof legal strategies for digital innovation.</p>
+                        <a href="#contact" class="service-link">
+                            Learn More <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CASE STUDIES ===== -->
+        <section id="cases" class="case-studies">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Track Record</span>
+                    <h2>Notable Case Studies</h2>
+                    <p>A selection of landmark cases that demonstrate our commitment to achieving exceptional outcomes
+                        for our clients.</p>
+                </div>
+
+                <div class="cases-scroll" id="cases-scroll">
+                    <div class="case-card">
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+                                alt="Corporate Merger Case">
+                        </div>
+                        <div class="case-card-body">
+                            <div class="case-category">Corporate Law</div>
+                            <h3>Major Cross-Border Merger</h3>
+                            <p>Successfully facilitated a $50M cross-border merger between two leading firms.</p>
+                            <div class="case-result">✓ Favorable Outcome</div>
                         </div>
                     </div>
-                    <div class="service-card glass scroll-reveal magnetic">
-                        <div class="service-icon"></div>
-                        <h3>Digital Assets</h3>
-                        <div class="service-reveal">
-                            <p>Navigating the complex regulatory landscape of blockchain and fintech.</p>
-                            <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+
+                    <div class="case-card">
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80"
+                                alt="IP Protection Case">
+                        </div>
+                        <div class="case-card-body">
+                            <div class="case-category">Intellectual Property</div>
+                            <h3>Patent Infringement Defense</h3>
+                            <p>Defended a tech startup against patent trolling with full dismissal of all claims.</p>
+                            <div class="case-result">✓ Claims Dismissed</div>
+                        </div>
+                    </div>
+
+                    <div class="case-card">
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80"
+                                alt="Property Dispute Case">
+                        </div>
+                        <div class="case-card-body">
+                            <div class="case-category">Property Law</div>
+                            <h3>Complex Land Dispute Resolution</h3>
+                            <p>Resolved a multi-party land ownership dispute involving commercial property worth $25M.
+                            </p>
+                            <div class="case-result">✓ Settlement Achieved</div>
+                        </div>
+                    </div>
+
+                    <div class="case-card">
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+                                alt="Labour Dispute Case">
+                        </div>
+                        <div class="case-card-body">
+                            <div class="case-category">Labour Law</div>
+                            <h3>Wrongful Termination Class Action</h3>
+                            <p>Represented 200+ employees in a landmark wrongful termination class action suit.</p>
+                            <div class="case-result">✓ Full Compensation</div>
+                        </div>
+                    </div>
+
+                    <div class="case-card">
+                        <div class="case-card-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                                alt="Fintech Compliance Case">
+                        </div>
+                        <div class="case-card-body">
+                            <div class="case-category">Digital Assets</div>
+                            <h3>Fintech Regulatory Compliance</h3>
+                            <p>Guided a fintech company through complex regulatory approval across 3 jurisdictions.</p>
+                            <div class="case-result">✓ Full Approval</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cases-nav">
+                    <button id="cases-prev" aria-label="Previous case">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <button id="cases-next" aria-label="Next case">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== OUR PEOPLE ===== -->
+        <section id="people" class="people">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Leadership</span>
+                    <h2>Meet Our Attorneys</h2>
+                    <p>A team of distinguished legal professionals committed to delivering justice and protecting your
+                        interests.</p>
+                </div>
+
+                <div class="people-gallery">
+                    <div class="person-card reveal stagger-1">
+                        <div class="person-img">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+                                alt="Alexandra Thorne - Managing Partner">
+                        </div>
+                        <div class="person-info">
+                            <h4>Alexandra Thorne</h4>
+                            <span class="person-role">Managing Partner</span>
+                            <p class="person-bio">20+ years of corporate law expertise. Harvard Law graduate. Led over
+                                200 high-profile merger and acquisition deals.</p>
+                            <div class="person-socials">
+                                <a href="#" aria-label="LinkedIn">LN</a>
+                                <a href="#" aria-label="Twitter">TW</a>
+                                <a href="#" aria-label="Email">EM</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="person-card reveal stagger-2">
+                        <div class="person-img">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
+                                alt="Marcus Sterling - Head of Litigation">
+                        </div>
+                        <div class="person-info">
+                            <h4>Marcus Sterling</h4>
+                            <span class="person-role">Head of Litigation</span>
+                            <p class="person-bio">15+ years of courtroom advocacy. Undefeated record in high-stakes
+                                commercial litigation cases across Southern Africa.</p>
+                            <div class="person-socials">
+                                <a href="#" aria-label="LinkedIn">LN</a>
+                                <a href="#" aria-label="Twitter">TW</a>
+                                <a href="#" aria-label="Email">EM</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="person-card reveal stagger-3">
+                        <div class="person-img">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80"
+                                alt="Elena Vance - IP Specialist">
+                        </div>
+                        <div class="person-info">
+                            <h4>Elena Vance</h4>
+                            <span class="person-role">IP Specialist</span>
+                            <p class="person-bio">Global IP strategy expert with a deep understanding of patent law,
+                                trademarks, and digital asset protection frameworks.</p>
+                            <div class="person-socials">
+                                <a href="#" aria-label="LinkedIn">LN</a>
+                                <a href="#" aria-label="Twitter">TW</a>
+                                <a href="#" aria-label="Email">EM</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- People Section -->
-        <section id="people" class="people">
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="testimonials">
             <div class="container">
-                <div class="section-header scroll-reveal">
-                    <span class="tag">Leadership</span>
-                    <h2>Our Attorneys</h2>
+                <div class="section-header reveal">
+                    <span class="section-tag">Client Stories</span>
+                    <h2>What Our Clients Say</h2>
+                    <p>Real feedback from clients who have experienced our commitment to legal excellence firsthand.</p>
                 </div>
-                <div class="people-gallery">
-                    <div class="person-card scroll-reveal">
-                        <div class="person-img">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
-                                alt="Alexandra Thorne">
+            </div>
+            <div class="testimonials-track" id="testimonials-track">
+                <!-- Card 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">Mutandiro, Chitsanga & Chitima Attorneys provided exceptional counsel
+                        during our company's merger. Their strategic insight and attention to detail were unmatched.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+                                alt="James Moyo">
                         </div>
-                        <div class="person-info glass">
-                            <h4>Alexandra Thorne</h4>
-                            <span>Managing Partner</span>
-                            <a href="#" class="bio-link">View Bio</a>
+                        <div class="testimonial-author-info">
+                            <h4>James Moyo</h4>
+                            <span>CEO, Moyo Holdings</span>
                         </div>
                     </div>
-                    <div class="person-card scroll-reveal">
-                        <div class="person-img">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
-                                alt="Marcus Sterling">
+                </div>
+
+                <!-- Card 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">When faced with a complex IP dispute, MCCA's expertise was
+                        invaluable. They not only protected our patents but secured a landmark ruling in our industry.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+                                alt="Sarah Ndlovu">
                         </div>
-                        <div class="person-info glass">
-                            <h4>Marcus Sterling</h4>
-                            <span>Head of Litigation</span>
-                            <a href="#" class="bio-link">View Bio</a>
+                        <div class="testimonial-author-info">
+                            <h4>Sarah Ndlovu</h4>
+                            <span>CTO, TechVentures Africa</span>
                         </div>
                     </div>
-                    <div class="person-card scroll-reveal">
-                        <div class="person-img">
-                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80"
-                                alt="Elena Vance">
+                </div>
+
+                <!-- Card 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">The property law team at MCCA guided us through a highly contested
+                        land acquisition with remarkable professionalism. Their knowledge of local land law is second to
+                        none.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80"
+                                alt="David Chikwanha">
                         </div>
-                        <div class="person-info glass">
-                            <h4>Elena Vance</h4>
-                            <span>IP Specialist</span>
-                            <a href="#" class="bio-link">View Bio</a>
+                        <div class="testimonial-author-info">
+                            <h4>David Chikwanha</h4>
+                            <span>Director, Greenfield Properties</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">After years of struggling with employment disputes, MCCA brought
+                        clarity and resolution. Their labor consultancy team is thorough, empathetic, and fiercely
+                        dedicated.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80"
+                                alt="Grace Mutasa">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Grace Mutasa</h4>
+                            <span>HR Director, National Corp</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicated for seamless loop -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">Mutandiro, Chitsanga & Chitima Attorneys provided exceptional counsel
+                        during our company's merger. Their strategic insight and attention to detail were unmatched.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+                                alt="James Moyo">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>James Moyo</h4>
+                            <span>CEO, Moyo Holdings</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">"</div>
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">When faced with a complex IP dispute, MCCA's expertise was
+                        invaluable. They not only protected our patents but secured a landmark ruling in our industry.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+                                alt="Sarah Ndlovu">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Sarah Ndlovu</h4>
+                            <span>CTO, TechVentures Africa</span>
                         </div>
                     </div>
                 </div>
@@ -197,26 +656,39 @@
         </section>
     </main>
 
-    <!-- Contact Section -->
+    <!-- ===== CONTACT SECTION ===== -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info scroll-reveal">
-                    <span class="tag">Get in Touch</span>
-                    <h2>Contact Our Experts</h2>
-                    <p class="contact-subtitle">Whether you're seeking counsel or have a specific inquiry, our team is
-                        ready to assist you with modern solutions and timeless expertise.</p>
+            <div class="section-header reveal">
+                <span class="section-tag">Get In Touch</span>
+                <h2>Contact Our Experts</h2>
+                <p>Whether you're seeking counsel or have a specific inquiry, our team is ready to assist with modern
+                    solutions and timeless expertise.</p>
+            </div>
 
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
                     <div class="info-items">
                         <div class="info-item">
-                            <div class="info-icon">📍</div>
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
                             <div class="info-text">
                                 <h4>Physical Address</h4>
                                 <p>Number 3 St Quintin Avenue<br>Eastlea, Harare<br>Zimbabwe</p>
                             </div>
                         </div>
                         <div class="info-item">
-                            <div class="info-icon">📞</div>
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                            </div>
                             <div class="info-text">
                                 <h4>Direct Lines</h4>
                                 <p>Tel: <a href="tel:+263242747113">+263 (242) 747 113</a></p>
@@ -225,54 +697,174 @@
                                 <p>Cell: <a href="tel:+263773474269">+263 773 474 269</a></p>
                             </div>
                         </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="info-text">
+                                <h4>Office Hours</h4>
+                                <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
+                                <p>Saturday: 9:00 AM – 1:00 PM</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="contact-form-container glass scroll-reveal">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="Enter your name" required>
+                <div class="contact-form-container reveal-right">
+                    <form class="contact-form" id="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                                <span class="error-message" id="name-error">Please enter your name</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="email@address.com" required>
+                                <span class="error-message" id="email-error">Please enter a valid email</span>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="email@address.com" required>
+                            <label for="service">Area of Interest</label>
+                            <select id="service" name="service">
+                                <option value="" disabled selected>Select a practice area</option>
+                                <option value="corporate">Corporate Law</option>
+                                <option value="litigation">Civil Litigation</option>
+                                <option value="ip">Intellectual Property</option>
+                                <option value="property">Property Law</option>
+                                <option value="labour">Labour Consultancy</option>
+                                <option value="digital">Digital Assets & Fintech</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="5" placeholder="How can we assist you?" required></textarea>
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5"
+                                placeholder="Tell us about your legal matter..." required></textarea>
+                            <span class="error-message" id="message-error">Please enter your message</span>
                         </div>
-                        <button type="submit" class="cta-btn primary magnetic">Send Inquiry</button>
+                        <button type="submit" class="cta-btn primary magnetic form-submit-btn">
+                            Send Inquiry
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== SUCCESS MODAL ===== -->
+    <div class="success-modal" id="success-modal">
+        <div class="success-modal-content">
+            <div class="success-icon">✓</div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. Our team at Mutandiro, Chitsanga & Chitima Attorneys will review your inquiry
+                and respond within 24 business hours.</p>
+            <button class="cta-btn primary" id="modal-close">Close</button>
+        </div>
+    </div>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-top">
+            <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo"><img src="logo_transparent.png" alt="MCCA Logo"></a>
-                    <p class="firm-name">Mutandiro, Chitsanga & Chitima Attorneys</p>
+                    <a href="#" class="logo"><img src="logo_transparent.png"
+                            alt="Mutandiro, Chitsanga & Chitima Attorneys Logo"></a>
+                    <h3 class="footer-brand-title">Mutandiro, Chitsanga & Chitima Attorneys</h3>
+                    <p>Providing world-class legal counsel with integrity, innovation, and unwavering commitment to
+                        justice.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-links">
+
+                <div class="footer-col">
+                    <h4>Practice Areas</h4>
+                    <ul>
+                        <li><a href="#services">Corporate Law</a></li>
+                        <li><a href="#services">Civil Litigation</a></li>
+                        <li><a href="#services">Intellectual Property</a></li>
+                        <li><a href="#services">Property Law</a></li>
+                        <li><a href="#services">Labour Consultancy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About MCCA</a></li>
+                        <li><a href="#people">Our Attorneys</a></li>
+                        <li><a href="#cases">Case Studies</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Stay informed with our latest legal insights and firm news delivered to your inbox.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mutandiro, Chitsanga & Chitima Attorneys. All rights reserved.</p>
+                <div class="footer-bottom-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
                     <a href="#">Disclaimer</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 MCCA Law Group. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#">LN</a>
-                    <a href="#">TW</a>
-                    <a href="#">IG</a>
-                </div>
-            </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to Top">
+        <svg viewBox="0 0 24 24">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <script src="main.js"></script>
 </body>
