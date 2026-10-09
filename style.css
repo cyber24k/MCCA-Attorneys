@@ -1747,6 +1747,17 @@ ul {
     gap: 1rem;
 }
 
+.footer-bottom p a {
+    color: var(--accent-amber);
+    font-weight: 600;
+    transition: var(--transition-fast);
+}
+
+.footer-bottom p a:hover {
+    color: var(--accent-amber-light);
+    text-decoration: underline;
+}
+
 .footer-bottom-links {
     display: flex;
     gap: 1.5rem;
