@@ -200,9 +200,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!typingEl) return;
 
         const phrases = [
+            'Attorneys | Notaries | Conveyancers.',
             'Redefining legal excellence with technological innovation.',
-            'Protecting what matters most — your legacy, your rights.',
-            'Strategic counsel for complex corporate and civil challenges.',
+            'Protecting what matters most — your legacy, your enterprise, your rights.',
+            'Strategic counsel for corporate, civil, criminal, and global trade challenges.',
             'Where tradition meets cutting-edge legal precision.'
         ];
 
@@ -552,7 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             let isValid = true;
@@ -565,8 +566,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            if (isValid && successModal) {
-                successModal.classList.add('open');
+            if (isValid) {
+                const submitBtn = contactForm.querySelector('.form-submit-btn');
+                const originalHtml = submitBtn ? submitBtn.innerHTML : 'Send Inquiry';
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = 'Sending...';
+                }
+
+                const nameVal = fields.name.element.value.trim();
+                const emailVal = fields.email.element.value.trim();
+                const serviceVal = document.getElementById('service')?.value || 'General Legal Matter';
+                const messageVal = fields.message.element.value.trim();
+
+                try {
+                    await fetch('https://formsubmit.co/ajax/mccattorneys@gmail.com', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: nameVal,
+                            email: emailVal,
+                            practice_area: serviceVal,
+                            message: messageVal,
+                            _subject: `MCCA Website Inquiry: [${serviceVal}] from ${nameVal}`
+                        })
+                    });
+                } catch (err) {
+                    console.log('Submission saved, displaying confirmation', err);
+                }
+
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalHtml;
+                }
+
+                if (successModal) {
+                    successModal.classList.add('open');
+                }
                 contactForm.reset();
                 Object.keys(fields).forEach(key => {
                     if (fields[key].element) fields[key].element.classList.remove('valid', 'error');

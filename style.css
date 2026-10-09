@@ -186,11 +186,15 @@ ul {
 .logo img {
     height: clamp(40px, 6vw, 56px);
     width: auto;
-    transition: var(--transition-smooth);
+    transition: var(--transition-smooth), filter 0.4s ease;
+    /* White logo on dark hero background */
+    filter: brightness(0) invert(1);
 }
 
 .navbar.scrolled .logo img {
     height: clamp(36px, 5vw, 46px);
+    /* Restore original navy + orange brand colors on light navbar */
+    filter: none;
 }
 
 .nav-links {
@@ -386,31 +390,63 @@ ul {
     display: flex;
     align-items: center;
     position: relative;
-    background: var(--primary-navy);
+    /* Hero background image — scales of justice / gavel */
+    background-image: url('hero_bg.jpg');
+    background-size: cover;
+    background-position: center 40%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     overflow: hidden;
     padding: clamp(100px, 16vh, 160px) 0 clamp(60px, 10vh, 100px);
+}
+
+/* Cinematic dual-layer overlay: left-heavy dark for text, right reveals the image */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(
+            105deg,
+            rgba(8, 18, 35, 0.92) 0%,
+            rgba(11, 25, 44, 0.82) 38%,
+            rgba(11, 25, 44, 0.55) 62%,
+            rgba(15, 10, 5, 0.68) 100%
+        ),
+        /* Bottom vignette for depth */
+        linear-gradient(
+            to top,
+            rgba(5, 10, 20, 0.65) 0%,
+            transparent 45%
+        );
+    pointer-events: none;
 }
 
 #particle-canvas {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
 }
 
 .hero-gradient {
     position: absolute;
     inset: 0;
-    z-index: 2;
+    z-index: 3;
     background:
-        radial-gradient(ellipse at 20% 50%, rgba(255, 107, 0, 0.1) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 80%, rgba(11, 25, 44, 0.4) 0%, transparent 50%);
+        /* Warm amber glow bottom-left — ties into gold scales tones */
+        radial-gradient(ellipse at 5% 85%, rgba(255, 140, 30, 0.18) 0%, transparent 50%),
+        /* Subtle navy depth top-right */
+        radial-gradient(ellipse at 92% 10%, rgba(11, 25, 44, 0.5) 0%, transparent 55%),
+        /* Gold shimmer mid-left behind text */
+        radial-gradient(ellipse at 20% 50%, rgba(255, 107, 0, 0.09) 0%, transparent 45%);
     pointer-events: none;
 }
 
 .hero .container {
     position: relative;
-    z-index: 3;
+    z-index: 4;
 }
 
 .hero-content {
@@ -1812,6 +1848,10 @@ ul {
 .stagger-4 { transition-delay: 0.32s; }
 .stagger-5 { transition-delay: 0.40s; }
 .stagger-6 { transition-delay: 0.48s; }
+.stagger-7 { transition-delay: 0.56s; }
+.stagger-8 { transition-delay: 0.64s; }
+.stagger-9 { transition-delay: 0.72s; }
+.stagger-10 { transition-delay: 0.80s; }
 
 /* Glass classes */
 .glass-frost {
